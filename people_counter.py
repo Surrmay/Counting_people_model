@@ -6,21 +6,9 @@ import time
 import os
 
 def count_people_video(video_path, output_path="output_people_counter.mp4"):
-    """
-    Count people entering and exiting in a video.
-    
-    Args:
-        video_path (str): Path to input video file
-        output_path (str): Path to save output video with annotations
-    
-    Returns:
-        dict: Statistics including total in, out, and processing time
-    """
-    
     print("\n" + "="*70)
     print("PEOPLE COUNTER - YOLO + CENTROID TRACKER")
     print("="*70 + "\n")
-    
     
     # Initialize YOLO Model
     print("[STEP 1/7] Loading YOLO model...")
