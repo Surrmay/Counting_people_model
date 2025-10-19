@@ -1,135 +1,125 @@
-🧍‍♂️ People Counter with YOLOv8
+# 🧍‍♂️ People Counter with YOLOv8
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+
 Real-time Detection, Tracking & Counting using Computer Vision
 
-🧭 Overview
+## 🧭 Overview
 
-People Counter with YOLOv8 is a computer vision system designed to automatically detect, track, and count people entering and exiting a video scene. It leverages YOLOv8 (You Only Look Once) for object detection and Centroid Tracking for consistent object identification across frames.
+People Counter with YOLOv8 is a computer vision system designed to automatically detect, track, and count people entering and exiting a video scene. It leverages YOLOv8 (You Only Look Once) for object detection and Centroid Tracking for consistent object identification across frames. This project provides a foundational framework for real-world applications such as retail analytics, facility management, and crowd monitoring.
 
-This project provides a foundational framework for real-world applications such as retail analytics, facility management, and crowd monitoring.
+## 📑 Table of Contents
 
-🎯 Objective
+- [🧭 Overview](#-overview)
+- [🎯 Key Features](#-key-features)
+- [⚙️ Tech Stack](#️-tech-stack)
+- [🛠️ Installation](#️-installation)
+- [🚀 Usage](#-usage)
+- [📂 Project Structure](#-project-structure)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [🔗 Important Links](#-important-links)
+- [📝 Footer](#-footer)
 
-To develop a robust and customizable people counting solution capable of accurately monitoring human movement in various video feeds using advanced detection and tracking algorithms.
+## 🎯 Key Features
 
-⚙️ System Architecture
+- 🚀 **Real-time People Detection:** Utilizes YOLOv8 for fast and accurate person detection in video frames.
+- 👣 **Centroid Tracking:** Implements a Centroid Tracker to maintain unique IDs for each person across frames.
+- 📈 **Line Crossing Detection:** Counts people entering and exiting by detecting when they cross a predefined line.
+- 📊 **IN/OUT Counting:** Provides separate counts for people entering (IN) and exiting (OUT).
+- 📹 **Video Input:** Supports processing from both video files.
+- 💾 **Annotated Output:** Generates an output video with bounding boxes, IDs, and counts overlaid on each frame.
 
-Video Input:
-The system reads frames sequentially from a video file or live stream.
+## ⚙️ Tech Stack
 
-Detection (YOLOv8):
-Each frame is analyzed to locate and classify people.
+- 🐍 **Python:** The primary programming language.
+- 🧠 **YOLOv8:** A state-of-the-art object detection model.
+- 🧮 **OpenCV:** A library for computer vision tasks.
+- 📊 **NumPy:** A library for numerical computing.
+- 🔬 **SciPy:** A library used by the CentroidTracker for calculating distances.
 
-Tracking (Centroid Algorithm):
-Detected positions are compared with previous frames using Euclidean distance to maintain unique IDs.
+## 🛠️ Installation
 
-Counting Logic:
-When a tracked person crosses the predefined line, they are counted as entering (IN) or exiting (OUT).
+1.  **Clone the repository:**
 
-Output Generation:
-Annotated frames are compiled into an output video with total IN/OUT/NET counts.
+    ```bash
+    git clone https://github.com/Surrmay/Counting_people_model.git
+    cd Counting_people_model
+    ```
 
-🧮 Performance Metrics
-Metric	Typical Range	Notes
-CPU Speed	15–25 FPS	Depends on video resolution
-GPU Speed (CUDA)	30–50+ FPS	Enables near real-time operation
-Model Size	~6 MB (YOLOv8n)	Small footprint
-Accuracy	85–95%	Dependent on lighting and camera angle
-Memory Usage	~500 MB	During active processing
-🖥️ System Requirements
-Minimum
+2.  **Install the required packages:**
 
-Processor: Intel i5 or equivalent
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-RAM: 8 GB
+    The `requirements.txt` file contains the following dependencies:
 
-Storage: 2 GB free space
+    ```text
+    ultralytics>=8.0.0
+    opencv-python>=4.8.0
+    numpy>=1.24.0
+    scipy>=1.10.0
+    ```
 
-Python: 3.8+
+## 🚀 Usage
 
-Internet: Required for first-time model download
+1.  **Run the `people_counter.py` script:**
 
-Recommended
+    To count people in a video, execute the following command:
 
-Processor: Intel i7 or higher
+    ```bash
+    python people_counter.py
+    ```
 
-GPU: NVIDIA GPU with CUDA
+    *   Ensure that the input video file (`test_vid_2.mp4` by default) is in the same directory as the script, or provide the correct path.
+    *   The output video (`output_people_counter_2.mp4` by default) will be saved in the same directory.
 
-RAM: 16 GB+
+2.  **Modify the input and output paths:**
 
-Storage: 5 GB+
+    You can change the input and output video paths by modifying the `video_path` and `output_path` variables in the `people_counter.py` script:
 
-🧩 Applications
+    ```python
+    video_path = "test_vid_2.mp4"
+    output_path = "output_people_counter_2.mp4"
+    ```
 
-Retail customer traffic analysis
+3. **Real-world use cases:**
 
-Smart building and facility management
+    *   **Retail Analytics:** Track customer traffic in stores to optimize staffing and store layout.
+    *   **Facility Management:** Monitor occupancy in buildings and rooms for safety and resource allocation.
+    *   **Event Monitoring:** Count attendees at events and venues for crowd management.
 
-Event and stadium crowd control
 
-Public transport monitoring
+## 🤝 Contributing
 
-Safety and occupancy limit enforcement
+Contributions are welcome! Please follow these steps:
 
-💡 Advantages
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Commit your changes.
+4.  Push your branch to your forked repository.
+5.  Create a pull request.
 
-Lightweight and easy to deploy
+## 📜 License
 
-Customizable parameters (line position, sensitivity, model type)
+This project is provided as-is for both educational and commercial purposes. Users are free to modify, extend, and distribute it under open terms.
 
-Works with both recorded videos and live camera feeds
+## 🔗 Important Links
 
-Provides interpretable, visual results through annotated outputs
+- **Repository Link:** [https://github.com/Surrmay/Counting_people_model](https://github.com/Surrmay/Counting_people_model)
 
-⚠️ Limitations
+## 📝 Footer
 
-Reduced accuracy in poor lighting or crowded conditions
+- Repository: [Counting_people_model](https://github.com/Surrmay/Counting_people_model)
+- Author: Computer Vision Expert
+- Contact: [Contact Information]
 
-Requires proper camera placement for optimal results
+⭐️ Like this project? Give it a star on [GitHub](https://github.com/Surrmay/Counting_people_model)!
 
-Processing may not be real-time on lower-end CPUs
+Fork, like, contribute, and raise issues to help improve this project.
 
-🚀 Future Enhancements
 
-Integration with DeepSORT or ByteTrack for advanced tracking
-
-Database logging for analytical data storage
-
-Web dashboard for real-time visual analytics
-
-Heatmap generation to visualize high-traffic zones
-
-Edge AI optimization for IoT deployment
-
-🧠 Troubleshooting Summary
-Issue	Likely Cause	Suggested Fix
-No detections	Low lighting or high confidence threshold	Improve lighting or reduce threshold
-False positives	Low confidence threshold	Increase threshold or use larger YOLO model
-ID switching	Tracker losing objects	Increase patience or use DeepSORT
-Slow processing	High resolution or CPU usage	Lower resolution or enable GPU
-Video not loading	Invalid path or codec	Verify video source and format
-📘 Terminology Summary Table
-Term	Description
-YOLO (You Only Look Once)	Real-time object detection algorithm predicting multiple objects in one pass.
-Object Detection	Identifying and classifying objects within an image or video frame.
-Centroid Tracking	Tracks object positions based on their geometric center (centroid).
-Line Crossing Detection	Counts objects that cross a predefined virtual line.
-Confidence Threshold	Minimum confidence level for a detection to be valid.
-Bounding Box	Rectangular outline marking detected object location.
-Frame	A single still image in a video sequence.
-FPS (Frames Per Second)	Number of frames processed each second, indicating speed.
-Tracker Patience	Number of frames an ID remains active after disappearing.
-Model Variant	Different YOLO model versions optimized for speed or accuracy.
-Detection Class	Object category identified by the model (e.g., person, car).
-Euclidean Distance	Formula to measure distance between two centroid points.
-Output Video	Annotated video showing bounding boxes and counts.
-Input Source	The video file or live feed analyzed by the system.
-🧾 License
-
-This project is provided as-is for both educational and commercial purposes.
-Users are free to modify, extend, and distribute it under open terms.
-
-👨‍💻 Author
-
-Developed by: Computer Vision Expert
-Date: October 2025
-Purpose: Real-world people counting solution using deep learning and vision-based tracking.
+---
+**<p align="center">Generated by [ReadmeCodeGen](https://www.readmecodegen.com/)</p>**
