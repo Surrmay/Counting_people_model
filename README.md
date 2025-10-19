@@ -113,8 +113,8 @@ This project is provided as-is for both educational and commercial purposes. Use
 ## 📝 Footer
 
 - Repository: [Counting_people_model](https://github.com/Surrmay/Counting_people_model)
-- Author: Computer Vision Expert
-- Contact: [Contact Information]
+- Author: Surrmay
+- Contact: https://www.linkedin.com/in/surrmay-shrivastav-678175245/
 
 ⭐️ Like this project? Give it a star on [GitHub](https://github.com/Surrmay/Counting_people_model)!
 
